@@ -1,11 +1,18 @@
 import React from 'react';
-import './Navigation.css';
+
+import AppBar from '@material-ui/core/AppBar';
+import ToolBar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
 function Navigation() {
     return (
-        <div className="header-panel">
-            <h1>React Todo App</h1>
-        </div>
+        <AppBar position="static">
+            <ToolBar>
+                <Typography variant="h6">
+                    Todo
+                </Typography>
+            </ToolBar>
+        </AppBar>
     );
 }
 

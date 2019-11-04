@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import Container from '@material-ui/core/Container';
 
-import './TodoList.css';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
 import Todo from './Todo';
 
 class TodoList extends Component {
@@ -38,14 +41,16 @@ class TodoList extends Component {
     render() {
         let todos = this.state.todos.map((todo, index) => <Todo key={index} text={todo} id={index} handleDelete={this.handleDelete}/>)
         return (
-            <div className="container">
+            <Container>
                 <form onSubmit={this.handleSubmit}>
-                    <input className="form-control" placeholder="Enter a todo..." type="text" value={this.state.todo} onChange={this.handleChange}/>
-                    <button className="form-button">Add Todo</button>
+                    <TextField label="Add todo" margin="normal" value={this.state.todo} onChange={this.handleChange} />
+                    <Button variant="contained" color="secondary">
+                        Add Todo
+                    </Button>
                 </form>
 
                 {todos}
-            </div>
+            </Container>
         )
     }
 }
