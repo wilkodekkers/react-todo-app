@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import './TodoList.css';
 import Todo from './Todo';
 
 class TodoList extends Component {
@@ -37,10 +38,10 @@ class TodoList extends Component {
     render() {
         let todos = this.state.todos.map((todo, index) => <Todo key={index} text={todo} id={index} handleDelete={this.handleDelete}/>)
         return (
-            <div style={{width: '800px', margin: '0 auto'}}>
+            <div className="container">
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" value={this.state.todo} onChange={this.handleChange}/>
-                    <button>Add Todo</button>
+                    <input className="form-control" placeholder="Enter a todo..." type="text" value={this.state.todo} onChange={this.handleChange}/>
+                    <button className="form-button">Add Todo</button>
                 </form>
 
                 {todos}
