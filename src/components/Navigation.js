@@ -1,7 +1,7 @@
 import React from 'react';
-import './Header.css';
+import './Navigation.css';
 
-function Header() {
+function Navigation() {
     return (
         <div className="header-panel">
             <h1>React Todo App</h1>
@@ -9,4 +9,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default Navigation;
